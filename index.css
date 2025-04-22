@@ -1,0 +1,713 @@
+:root{
+    --skyblue:#0c7dc9;
+    --dark: #0a192f;
+    --violet:#ccd6f6;
+    --lg-green: #64ffda;
+    --lg-violet: #8892b0;
+    --navy:#112240;
+    --white:#fff;
+    --dark-blue:#020c1b;    
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0px ;
+    padding: 0px;
+}
+
+body , header{
+    background-color: var(--dark);
+    background-size: cover;
+    /* min-height: 20vh; */
+    color: var(--violet);
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 18px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    transition: top 0.3s;
+    background-color: var(--dark);
+    opacity: 0.7;
+}
+
+/* Hidden navbar */
+.navbar.hide-nav {
+    top: -100px; /* move it out of view */
+}
+.nav-link , .navbar-brand{
+    color: var(--violet) !important;
+    margin: 10px;
+    /* padding: 30px 30px 0 60px; */
+}
+
+.navbar > .container-fluid {
+    padding: 30px 60px 0 60px;
+}
+
+.nav-item ,.nav-link span{
+    margin-right: 3px;
+    color: var(--lg-green);
+}
+
+.nav-link:hover{
+    color: var(--lg-green) !important;
+}
+
+ .nav-link {
+    position: relative;
+    display: inline-block;
+    color: var(--lg-green);
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--lg-green);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+.dropdown-item {
+    color: var(--violet) !important;
+    background-color: var(--dark) !important; 
+}
+
+.dropdown-item:hover {
+    color: var(--lg-green) !important;  
+}
+
+.kpk-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .kpk-logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .kpk-hex-item {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .kpk-hex-outline {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: var(--dark);
+    overflow: hidden;
+  }
+  
+  .kpk-hex-outline::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      transparent 0deg,
+      transparent 60deg,
+      var(--violet) 90deg,
+      transparent 180deg,
+      transparent 300deg
+    );
+    animation: kpk-rotate-flow 4s linear infinite alternate;
+  }
+  
+  .kpk-hex-background {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .kpk-letter-text {
+    color: var(--lg-green);
+    font-size: 25px;
+    font-weight: bold;
+    z-index: 2;
+  }
+  
+  @keyframes kpk-rotate-flow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* .{
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  } */
+
+  main , section{
+    padding: 8% 8% 8% 6% !important;
+  }
+
+main.container > :nth-child(1){
+    color: var(--lg-green);
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 22px;
+}
+main.container > h1{
+    color: var(--violet);
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 3.0rem;
+}
+.web{
+    color: var(--lg-violet);
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 3rem;
+} 
+
+.para{
+    color: var(--lg-violet);
+    font-size: 1.7rem;
+    max-width: 60%;
+}
+.para span{
+    color: var(--lg-green);
+    font-size: 1.6rem;
+    
+}
+a{
+    text-decoration: none;
+}
+
+.resume-btn{
+    border-radius: 0.2rem;
+    padding: 0.6rem 1rem;
+    color: var(--lg-green);
+    border: 2px solid var(--lg-green);
+    background-color: var(--dark);
+    max-width: 200px;
+    margin: 1.5rem 0px 0px;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+.resume-btn:hover{
+    background-color: #133040;
+}
+
+#about{
+    color: var(--violet);
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    max-width: 95%;
+    border-radius: 5px;
+    background-color: var(--navy);
+    padding: 20px;
+    margin-top:15px ;
+  }
+  .about-para{
+    color: var(--lg-violet);
+    font-size: 1.7rem;
+
+  }
+
+  /* .card-border{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0.8rem;
+    left: 0.8rem;
+    border: 2px solid var(--lg-green);
+    border-radius: 0.25rem;
+    transition: 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  img.position-relative {
+    z-index: 2;
+    border-radius: 0.25rem;
+} */
+.card-border{
+    border: 2px solid var(--lg-green);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card-border:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px var(--lg-green); /* soft green glow */
+  border-radius: 1rem;
+  cursor: pointer;
+}
+strong{
+    color: var(--lg-green);
+}
+.exp-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    max-width: 95%;
+    border-radius: 5px;
+    background-color: var(--navy);
+    padding: 3rem 3rem 20px 3rem;
+    margin-top:15px ;
+  }
+.exp {
+    padding: 2rem;
+    border: 1px solid rgb(109, 117, 143);
+    background-color: var(--navy);
+    border-radius: 0.25rem;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    margin-bottom: 2.2rem;
+}
+.exp .company-logo {
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    left: 2rem;
+    top: -1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgb(109, 117, 143);
+    background-color: var(--navy);
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.design{
+    height: 30px;
+    width: 30px;
+}
+.comp-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+i{
+    font-size: 1.5rem;
+}
+.skills{
+    padding: 0.5rem;
+    margin: 10px;
+    color: var(--violet);
+    font-size: 18px;
+    background-color: var(--navy);
+    transition: all 0.9s ease;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /* border: 2px solid var(--lg-violet); */
+}
+.skills:hover{
+    transform:scale(1.2);
+    transition: all 0.9s ease ; 
+    color: var(--lg-green);
+     border: 2px solid var(--lg-green);
+}
+
+.comp-name a{
+    color: var(--lg-green);  
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    background-color: var(--lg-violet) !important;
+    text-align: left;
+    padding: 8px;
+  }
+  .kpk-wrapper-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .kpk-logo-link-2 {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .kpk-hex-item-2 {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .kpk-hex-outline-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: var(--dark);
+    overflow: hidden;
+  }
+  
+  /* .kpk-hex-outline-2::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      transparent 0deg,
+      transparent 60deg,
+      var(--violet) 90deg,
+      transparent 180deg,
+      transparent 300deg
+    );
+  } */
+  
+  .kpk-hex-background-2 {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .kpk-letter-text-2 {
+    color: var(--lg-green);
+    z-index: 2;
+  }
+  
+  .png-img{
+    height: 50px;
+    width: 50px;
+    transition: all 0.9 ease;
+  }
+  .png-img:hover{
+    transition: all 1s ease;
+  }
+  .kpk-wrapper-2 {
+    transition: transform 0.9s ease;
+    display: inline-block;
+  }
+  
+  .kpk-wrapper-2:hover {
+    transform: scale(1.2);
+    transition: transform 0.9s ease;
+  }
+  
+  .kpk-hover-text {
+    display: none;
+    color: var(--lg-green);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    transition: transform 0.9s ease;
+  }
+  
+  .kpk-wrapper-2:hover .kpk-hover-text {
+    display: block;
+  }
+
+  .mobile{
+    color: var(--lg-green);
+    font-size: 2rem;
+    margin-left: 10px;
+  }
+  .mobile a ,footer a{
+    color: var(--lg-green);
+  }
+  .mobile a:hover{
+    text-decoration: underline;
+  }
+  footer{
+    background-color: var(--dark-blue);
+    height: 100%;
+    padding: 30px;
+    margin-top: 50px;
+  }
+
+  .logs{
+    padding: 20px;
+  }
+
+  .fixedbutton-whatsapp {
+    position: fixed;
+    bottom: 130px;
+    left: 10px;
+    z-index: 9;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 9px
+}
+
+    .fixedbutton-whatsapp img {
+        width: 30px;
+        height: 30px
+    }
+
+.whatsapp-qr {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    width: 50px;
+    background: #fff;
+    padding: 10px;
+    display: none
+}
+
+.fixedbutton-arrow, .fixedbutton-call {
+    position: fixed;
+    bottom: 50px;
+    z-index: 9;
+    background: #08386c !important;
+    width: 50px;
+    height: 50px;
+    padding: 11px;
+    animation: pulse 1.2s infinite;
+}
+
+.fixedbutton-call ,.fixedbutton-git , .fixedbutton-linkedin , .fixedbutton-message{
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #fff !important
+}
+
+.fixedbutton-git {
+  position: fixed;
+  bottom: 130px;
+  z-index: 9;
+  background: #000;
+  width: 50px;
+  height: 50px;
+  padding: 11px;
+  animation: pulse 1.2s infinite;
+}
+
+.fixedbutton-linkedin {
+  position: fixed;
+  bottom: 210px;
+  z-index: 9;
+  background: var(--skyblue);
+  width: 50px;
+  height: 50px;
+  padding: 11px;
+  animation: pulse 1.2s infinite;
+}
+
+.fixedbutton-message {
+  position: fixed;
+  bottom: 290px;
+  z-index: 9;
+  background: var(--navy);
+  width: 50px;
+  height: 50px;
+  padding: 11px;
+  animation: pulse 1.2s infinite;
+}
+
+.fixedbutton-arrow {
+    right: 10px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff !important;
+    box-shadow: none !important;
+    transition: opacity .3s ease-in-out
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fixedbutton-whatsapp:hover ,.fixedbutton-git:hover , .fixedbutton-linkedin:hover , .fixedbutton-message:hover{
+  background-color: #133040 !important;
+  transition: all 0.8 ease;
+}
+
+.kpk-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--navy);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.kpk-preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.kpk-preloader-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+  .icon{
+    font-size: 20px;
+  } 
+
+  .fixed-email-text {
+    position: fixed;
+    right: 30px;
+    bottom: 130px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg); /* To make text bottom to top */
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--lg-green); /* Or any color you want */
+    z-index: 10;
+  }
+  
+  .fixed-email-text a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .fixed-email-text a:hover {
+    color: var(--violet); /* Change to your hover color */
+  }
+
+  @media (min-width: 0px) and (max-width: 425.99px) {
+    .kpk-wrapper-2{
+      margin: 15px;
+    }
+    .fixedbutton-message{
+      height: 40px;
+      width: 40px;
+      bottom: 280px;
+    }
+    .fixedbutton-git {
+      height: 40px;
+      width: 40px;
+      bottom: 160px;
+    }
+    .fixedbutton-linkedin {
+      height: 40px;
+      width: 40px;
+      bottom: 220px;
+    }
+    .fixedbutton-call{
+      height: 40px;
+      width: 40px;
+      bottom: 100px;
+    }
+    .fixedbutton-arrow{
+      height: 40px;
+      width: 40px;
+      bottom: 100px;
+      padding: 5px;
+    }
+    .icon{
+      font-size: 15px;
+      
+    }
+    .fixed-email-text{
+      bottom: 200px;
+      right: 4px;
+    }
+  }
+  
+  @media screen and (min-width: 320px) and (max-width: 768.99px) {
+    .web{
+      font-size: 1.8rem;
+    }
+    .para {
+      max-width: 100% !important;
+      text-align: center;
+      font-size: 20px;
+    }
+    .about-para , .mobile{
+      font-size: 16px;
+    }
+    #about{
+      font-size: 26px;
+    }
+    .exp{
+      padding: 0.3rem;
+    }
+    .exp-card{
+      padding: 2rem;
+    }
+    main.container > :nth-child(1){
+      padding-top:78px;
+    }
+    main, section{
+      padding: 6% 6% 6% 4% !important;
+    }
+    main.container > h1{
+      font-size: 35px;
+    }
+  }
