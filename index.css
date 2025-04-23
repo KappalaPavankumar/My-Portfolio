@@ -32,7 +32,7 @@ body , header{
     z-index: 3;
     transition: top 0.3s;
     background-color: var(--dark);
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 /* Hidden navbar */
@@ -477,9 +477,17 @@ table {
     padding: 30px;
     margin-top: 50px;
   }
+  .padd{
+    padding:0;
+  }
 
   .logs{
     padding: 20px;
+    transition: all 0.5s ease;
+  }
+  .logs:hover{
+    transform: scale(1.5);
+    transition: all 0.5s ease;
   }
 
   .fixedbutton-whatsapp {
@@ -639,6 +647,12 @@ table {
   .fixed-email-text a:hover {
     color: var(--violet); /* Change to your hover color */
   }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2364ffda' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  
+ 
 
   @media (min-width: 0px) and (max-width: 425.99px) {
     .kpk-wrapper-2{
@@ -710,4 +724,9 @@ table {
     main.container > h1{
       font-size: 35px;
     }
+
+  }
+
+  @media screen and (min-width: 769px){
+
   }
